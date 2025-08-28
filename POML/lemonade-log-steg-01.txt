@@ -1,0 +1,762 @@
+PS C:\Users\Pro User> lemonade-server serve --log-level trace
+Starting Lemonade Server...
+INFO:     Middleware set up
+DEBUG:    Starting new HTTPS connection (1): api.github.com:443
+DEBUG:    Using proactor: IocpProactor
+INFO:     Started server process [13672]
+INFO:     Waiting for application startup.
+INFO:
+
+[Lemonade]  Lemonade Server v8.1.3 Ready!
+[Lemonade]    Open http://localhost:8000 in your browser for:
+[Lemonade]      chat
+[Lemonade]      model management
+[Lemonade]      docs
+
+DEBUG:    https://api.github.com:443 "GET /repos/lemonade-sdk/lemonade/releases/latest HTTP/1.1" 200 2236
+DEBUG:    Updated version info: latest version 8.1.3
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+DEBUG:    Error checking server state: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/v0/health (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000286325AA290>, 'Connection to localhost timed out. (connect timeout=0.1)'))
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://localhost:8000 (Press CTRL+C to quit)
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50277 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 749
+DEBUG:    Total request time (streamed): 0.0024 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50278 - "GET /api/v0/health HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/health HTTP/1.1" 200 60
+DEBUG:    Total request time (streamed): 0.0012 seconds
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     Loading llm: user.Openai_gpt-oss-20b-CODER-NEO-CODE-DI-MATRIX-GGUF
+INFO:     Using backend: vulkan
+DEBUG:    Starting new HTTPS connection (1): huggingface.co:443
+DEBUG:    https://huggingface.co:443 "GET /api/models/DavidAU/Openai_gpt-oss-20b-CODER-NEO-CODE-DI-MATRIX-GGUF/tree/main?recursive=True&expand=False HTTP/1.1" 200 1672
+DEBUG:    https://huggingface.co:443 "GET /api/models/DavidAU/Openai_gpt-oss-20b-CODER-NEO-CODE-DI-MATRIX-GGUF/revision/main HTTP/1.1" 200 18980
+Fetching 1 files: 100%|##########################################################################| 1/1 [00:00<?, ?it/s]
+DEBUG:    GGUF file paths: {'variant': 'C:\\Users\\Pro User\\.cache\\huggingface\\hub\\models--DavidAU--Openai_gpt-oss-20b-CODER-NEO-CODE-DI-MATRIX-GGUF\\snapshots\\d0386f220c393f553cc364f90a09a9800d8e36b5\\OpenAI-20B-NEO-CODE-DIMAT-IQ4_NL.gguf'}
+DEBUG:    Starting new HTTP connection (1): localhost:50281
+DEBUG:    LLAMA SERVER GPU: load_backend: loaded RPC backend from C:\Lemonade Server\python\vulkan\llama_server\ggml-rpc.dll
+DEBUG:    LLAMA SERVER GPU: ggml_vulkan: Found 1 Vulkan devices:
+INFO:     GPU acceleration active: 1 device(s) detected by llama-server
+DEBUG:    LLAMA SERVER GPU: ggml_vulkan: 0 = AMD Radeon(TM) 890M Graphics (AMD proprietary driver) | uma: 1 | fp16: 1 | bf16: 1 | warp size: 64 | shared memory: 32768 | int dot: 1 | matrix cores: KHR_coopmat
+DEBUG:    LLAMA SERVER GPU: load_backend: loaded Vulkan backend from C:\Lemonade Server\python\vulkan\llama_server\ggml-vulkan.dll
+DEBUG:    LLAMA SERVER GPU: load_backend: loaded CPU backend from C:\Lemonade Server\python\vulkan\llama_server\ggml-cpu-icelake.dll
+DEBUG:    LLAMA SERVER GPU: build: 6097 (9515c613) with clang version 19.1.5 for x86_64-pc-windows-msvc
+DEBUG:    LLAMA SERVER GPU: system info: n_threads = 12, n_threads_batch = 12, total_threads = 24
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: system_info: n_threads = 12 (n_threads_batch = 12) / 24 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 |
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: main: binding port with default address family
+DEBUG:    LLAMA SERVER GPU: main: HTTP server is listening, hostname: 127.0.0.1, port: 50281, http threads: 23
+DEBUG:    LLAMA SERVER GPU: main: loading model
+DEBUG:    LLAMA SERVER GPU: srv    load_model: loading model 'C:\Users\Pro User\.cache\huggingface\hub\models--DavidAU--Openai_gpt-oss-20b-CODER-NEO-CODE-DI-MATRIX-GGUF\snapshots\d0386f220c393f553cc364f90a09a9800d8e36b5\OpenAI-20B-NEO-CODE-DIMAT-IQ4_NL.gguf'
+DEBUG:    LLAMA SERVER GPU: llama_model_load_from_file_impl: using device Vulkan0 (AMD Radeon(TM) 890M Graphics) - 32512 MiB free
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: loaded meta data with 39 key-value pairs and 459 tensors from C:\Users\Pro User\.cache\huggingface\hub\models--DavidAU--Openai_gpt-oss-20b-CODER-NEO-CODE-DI-MATRIX-GGUF\snapshots\d0386f220c393f553cc364f90a09a9800d8e36b5\OpenAI-20B-NEO-CODE-DIMAT-IQ4_NL.gguf (version GGUF V3 (latest))
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv   0:                       general.architecture str              = gpt-oss
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv   1:                               general.type str              = model
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv   2:                               general.name str              = Gpt Oss 20b
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv   3:                           general.basename str              = gpt-oss
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv   4:                         general.size_label str              = 20B
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv   5:                            general.license str              = apache-2.0
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv   6:                               general.tags arr[str,2]       = ["vllm", "text-generation"]
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv   7:                        gpt-oss.block_count u32              = 24
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv   8:                     gpt-oss.context_length u32              = 131072
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv   9:                   gpt-oss.embedding_length u32              = 2880
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  10:                gpt-oss.feed_forward_length u32              = 2880
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  11:               gpt-oss.attention.head_count u32              = 64
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  12:            gpt-oss.attention.head_count_kv u32              = 8
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  13:                     gpt-oss.rope.freq_base f32              = 150000.000000
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  14:   gpt-oss.attention.layer_norm_rms_epsilon f32              = 0.000010
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  15:                       gpt-oss.expert_count u32              = 32
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  16:                  gpt-oss.expert_used_count u32              = 4
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  17:               gpt-oss.attention.key_length u32              = 64
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  18:             gpt-oss.attention.value_length u32              = 64
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  19:           gpt-oss.attention.sliding_window u32              = 128
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  20:         gpt-oss.expert_feed_forward_length u32              = 2880
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  21:                  gpt-oss.rope.scaling.type str              = yarn
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  22:                gpt-oss.rope.scaling.factor f32              = 32.000000
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  23: gpt-oss.rope.scaling.original_context_length u32              = 4096
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  24:                       tokenizer.ggml.model str              = gpt2
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  25:                         tokenizer.ggml.pre str              = gpt-4o
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  26:                      tokenizer.ggml.tokens arr[str,201088]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  27:                  tokenizer.ggml.token_type arr[i32,201088]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  28:                      tokenizer.ggml.merges arr[str,446189]  = ["Ġ Ġ", "Ġ ĠĠĠ", "ĠĠ ĠĠ", "...
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  29:                tokenizer.ggml.bos_token_id u32              = 199998
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  30:                tokenizer.ggml.eos_token_id u32              = 200002
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  31:            tokenizer.ggml.padding_token_id u32              = 199999
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  32:                    tokenizer.chat_template str              = {#-\n  In addition to the normal input...
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  33:               general.quantization_version u32              = 2
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  34:                          general.file_type u32              = 25
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  35:                      quantize.imatrix.file str              = E:/_imx/OpenAI-20B-NEO-CODE.gguf
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  36:                   quantize.imatrix.dataset str              = f:/llamacpp/_raw_imatrix/code.txt
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  37:             quantize.imatrix.entries_count u32              = 192
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - kv  38:              quantize.imatrix.chunks_count u32              = 324
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - type  f32:  289 tensors
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - type q5_1:   24 tensors
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - type q8_0:    1 tensors
+DEBUG:    LLAMA SERVER GPU: llama_model_loader: - type iq4_nl:  145 tensors
+DEBUG:    LLAMA SERVER GPU: print_info: file format = GGUF V3 (latest)
+DEBUG:    LLAMA SERVER GPU: print_info: file type   = IQ4_NL - 4.5 bpw
+DEBUG:    LLAMA SERVER GPU: print_info: file size   = 11.26 GiB (4.63 BPW)
+DEBUG:    LLAMA SERVER GPU: load: printing all EOG tokens:
+DEBUG:    LLAMA SERVER GPU: load:   - 199999 ('<|endoftext|>')
+DEBUG:    LLAMA SERVER GPU: load:   - 200002 ('<|return|>')
+DEBUG:    LLAMA SERVER GPU: load:   - 200007 ('<|end|>')
+DEBUG:    LLAMA SERVER GPU: load:   - 200012 ('<|call|>')
+DEBUG:    LLAMA SERVER GPU: load: special_eog_ids contains both '<|return|>' and '<|call|>' tokens, removing '<|end|>' token from EOG list
+DEBUG:    LLAMA SERVER GPU: load: special tokens cache size = 21
+DEBUG:    LLAMA SERVER GPU: load: token to piece cache size = 1.3332 MB
+DEBUG:    LLAMA SERVER GPU: print_info: arch             = gpt-oss
+DEBUG:    LLAMA SERVER GPU: print_info: vocab_only       = 0
+DEBUG:    LLAMA SERVER GPU: print_info: n_ctx_train      = 131072
+DEBUG:    LLAMA SERVER GPU: print_info: n_embd           = 2880
+DEBUG:    LLAMA SERVER GPU: print_info: n_layer          = 24
+DEBUG:    LLAMA SERVER GPU: print_info: n_head           = 64
+DEBUG:    LLAMA SERVER GPU: print_info: n_head_kv        = 8
+DEBUG:    LLAMA SERVER GPU: print_info: n_rot            = 64
+DEBUG:    LLAMA SERVER GPU: print_info: n_swa            = 128
+DEBUG:    LLAMA SERVER GPU: print_info: is_swa_any       = 1
+DEBUG:    LLAMA SERVER GPU: print_info: n_embd_head_k    = 64
+DEBUG:    LLAMA SERVER GPU: print_info: n_embd_head_v    = 64
+DEBUG:    LLAMA SERVER GPU: print_info: n_gqa            = 8
+DEBUG:    LLAMA SERVER GPU: print_info: n_embd_k_gqa     = 512
+DEBUG:    LLAMA SERVER GPU: print_info: n_embd_v_gqa     = 512
+DEBUG:    LLAMA SERVER GPU: print_info: f_norm_eps       = 0.0e+00
+DEBUG:    LLAMA SERVER GPU: print_info: f_norm_rms_eps   = 1.0e-05
+DEBUG:    LLAMA SERVER GPU: print_info: f_clamp_kqv      = 0.0e+00
+DEBUG:    LLAMA SERVER GPU: print_info: f_max_alibi_bias = 0.0e+00
+DEBUG:    LLAMA SERVER GPU: print_info: f_logit_scale    = 0.0e+00
+DEBUG:    LLAMA SERVER GPU: print_info: f_attn_scale     = 0.0e+00
+DEBUG:    LLAMA SERVER GPU: print_info: n_ff             = 2880
+DEBUG:    LLAMA SERVER GPU: print_info: n_expert         = 32
+DEBUG:    LLAMA SERVER GPU: print_info: n_expert_used    = 4
+DEBUG:    LLAMA SERVER GPU: print_info: causal attn      = 1
+DEBUG:    LLAMA SERVER GPU: print_info: pooling type     = 0
+DEBUG:    LLAMA SERVER GPU: print_info: rope type        = 2
+DEBUG:    LLAMA SERVER GPU: print_info: rope scaling     = yarn
+DEBUG:    LLAMA SERVER GPU: print_info: freq_base_train  = 150000.0
+DEBUG:    LLAMA SERVER GPU: print_info: freq_scale_train = 0.03125
+DEBUG:    LLAMA SERVER GPU: print_info: n_ctx_orig_yarn  = 4096
+DEBUG:    LLAMA SERVER GPU: print_info: rope_finetuned   = unknown
+DEBUG:    LLAMA SERVER GPU: print_info: model type       = ?B
+DEBUG:    LLAMA SERVER GPU: print_info: model params     = 20.91 B
+DEBUG:    LLAMA SERVER GPU: print_info: general.name     = Gpt Oss 20b
+DEBUG:    LLAMA SERVER GPU: print_info: n_ff_exp         = 2880
+DEBUG:    LLAMA SERVER GPU: print_info: vocab type       = BPE
+DEBUG:    LLAMA SERVER GPU: print_info: n_vocab          = 201088
+DEBUG:    LLAMA SERVER GPU: print_info: n_merges         = 446189
+DEBUG:    LLAMA SERVER GPU: print_info: BOS token        = 199998 '<|startoftext|>'
+DEBUG:    LLAMA SERVER GPU: print_info: EOS token        = 200002 '<|return|>'
+DEBUG:    LLAMA SERVER GPU: print_info: EOT token        = 199999 '<|endoftext|>'
+DEBUG:    LLAMA SERVER GPU: print_info: PAD token        = 199999 '<|endoftext|>'
+DEBUG:    LLAMA SERVER GPU: print_info: LF token         = 198 'Ċ'
+DEBUG:    LLAMA SERVER GPU: print_info: EOG token        = 199999 '<|endoftext|>'
+DEBUG:    LLAMA SERVER GPU: print_info: EOG token        = 200002 '<|return|>'
+DEBUG:    LLAMA SERVER GPU: print_info: EOG token        = 200012 '<|call|>'
+DEBUG:    LLAMA SERVER GPU: print_info: max token length = 256
+DEBUG:    LLAMA SERVER GPU: load_tensors: loading model tensors, this can take a while... (mmap = true)
+DEBUG:    LLAMA SERVER GPU: load_tensors: offloading 24 repeating layers to GPU
+DEBUG:    LLAMA SERVER GPU: load_tensors: offloading output layer to GPU
+DEBUG:    LLAMA SERVER GPU: load_tensors: offloaded 25/25 layers to GPU
+DEBUG:    LLAMA SERVER GPU: load_tensors:      Vulkan0 model buffer size = 11221.46 MiB
+DEBUG:    LLAMA SERVER GPU: load_tensors:   CPU_Mapped model buffer size =   310.67 MiB
+DEBUG:    http://localhost:50281 "GET /health HTTP/1.1" 503 75
+DEBUG:    LLAMA SERVER GPU: srv  log_server_r: request: GET /health 127.0.0.1 503
+DEBUG:    Testing llama-server readiness (will retry until ready), result: {'error': {'code': 503, 'message': 'Loading model', 'type': 'unavailable_error'}}
+DEBUG:    Starting new HTTP connection (1): localhost:50281
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+DEBUG:    http://localhost:50281 "GET /health HTTP/1.1" 503 75
+DEBUG:    LLAMA SERVER GPU: ............................................................................srv  log_server_r: request: GET /health 127.0.0.1 503
+DEBUG:    Testing llama-server readiness (will retry until ready), result: {'error': {'code': 503, 'message': 'Loading model', 'type': 'unavailable_error'}}
+DEBUG:    LLAMA SERVER GPU: ..
+DEBUG:    LLAMA SERVER GPU: llama_context: constructing llama_context
+DEBUG:    LLAMA SERVER GPU: llama_context: n_seq_max     = 1
+DEBUG:    LLAMA SERVER GPU: llama_context: n_ctx         = 4096
+DEBUG:    LLAMA SERVER GPU: llama_context: n_ctx_per_seq = 4096
+DEBUG:    LLAMA SERVER GPU: llama_context: n_batch       = 2048
+DEBUG:    LLAMA SERVER GPU: llama_context: n_ubatch      = 512
+DEBUG:    LLAMA SERVER GPU: llama_context: causal_attn   = 1
+DEBUG:    LLAMA SERVER GPU: llama_context: flash_attn    = 0
+DEBUG:    LLAMA SERVER GPU: llama_context: kv_unified    = false
+DEBUG:    LLAMA SERVER GPU: llama_context: freq_base     = 150000.0
+DEBUG:    LLAMA SERVER GPU: llama_context: freq_scale    = 0.03125
+DEBUG:    LLAMA SERVER GPU: llama_context: n_ctx_per_seq (4096) < n_ctx_train (131072) -- the full capacity of the model will not be utilized
+DEBUG:    LLAMA SERVER GPU: llama_context: Vulkan_Host  output buffer size =     0.77 MiB
+DEBUG:    LLAMA SERVER GPU: llama_kv_cache_unified_iswa: creating non-SWA KV cache, size = 4096 cells
+DEBUG:    LLAMA SERVER GPU: llama_kv_cache_unified:    Vulkan0 KV buffer size =    96.00 MiB
+DEBUG:    LLAMA SERVER GPU: llama_kv_cache_unified: size =   96.00 MiB (  4096 cells,  12 layers,  1/1 seqs), K (f16):   48.00 MiB, V (f16):   48.00 MiB
+DEBUG:    LLAMA SERVER GPU: llama_kv_cache_unified_iswa: creating     SWA KV cache, size = 640 cells
+DEBUG:    LLAMA SERVER GPU: llama_kv_cache_unified:    Vulkan0 KV buffer size =    15.00 MiB
+DEBUG:    LLAMA SERVER GPU: llama_kv_cache_unified: size =   15.00 MiB (   640 cells,  12 layers,  1/1 seqs), K (f16):    7.50 MiB, V (f16):    7.50 MiB
+DEBUG:    LLAMA SERVER GPU: llama_context:    Vulkan0 compute buffer size =   552.51 MiB
+DEBUG:    LLAMA SERVER GPU: llama_context: Vulkan_Host compute buffer size =    18.89 MiB
+DEBUG:    LLAMA SERVER GPU: llama_context: graph nodes  = 1446
+DEBUG:    LLAMA SERVER GPU: llama_context: graph splits = 2
+DEBUG:    LLAMA SERVER GPU: common_init_from_params: KV cache shifting is not supported for this context, disabling KV cache shifting
+DEBUG:    LLAMA SERVER GPU: common_init_from_params: added <|endoftext|> logit bias = -inf
+DEBUG:    LLAMA SERVER GPU: common_init_from_params: added <|return|> logit bias = -inf
+DEBUG:    LLAMA SERVER GPU: common_init_from_params: added <|call|> logit bias = -inf
+DEBUG:    LLAMA SERVER GPU: common_init_from_params: setting dry_penalty_last_n to ctx_size = 4096
+DEBUG:    LLAMA SERVER GPU: common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+DEBUG:    LLAMA SERVER GPU: srv          init: initializing slots, n_slots = 1
+DEBUG:    LLAMA SERVER GPU: slot         init: id  0 | task -1 | new slot n_ctx_slot = 4096
+DEBUG:    LLAMA SERVER GPU: main: model loaded
+DEBUG:    LLAMA SERVER GPU: main: chat template, chat_template: {#-
+DEBUG:    LLAMA SERVER GPU: In addition to the normal inputs of `messages` and `tools`, this template also accepts the
+DEBUG:    LLAMA SERVER GPU: following kwargs:
+DEBUG:    LLAMA SERVER GPU: - "builtin_tools": A list, can contain "browser" and/or "python".
+DEBUG:    LLAMA SERVER GPU: - "model_identity": A string that optionally describes the model identity.
+DEBUG:    LLAMA SERVER GPU: - "reasoning_effort": A string that describes the reasoning effort, defaults to "medium".
+DEBUG:    LLAMA SERVER GPU: #}
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: {#- Tool Definition Rendering ============================================== #}
+DEBUG:    LLAMA SERVER GPU: {%- macro render_typescript_type(param_spec, required_params, is_nullable=false) -%}
+DEBUG:    LLAMA SERVER GPU: {%- if param_spec.type == "array" -%}
+DEBUG:    LLAMA SERVER GPU: {%- if param_spec['items'] -%}
+DEBUG:    LLAMA SERVER GPU: {%- if param_spec['items']['type'] == "string" -%}
+DEBUG:    LLAMA SERVER GPU: {{- "string[]" }}
+DEBUG:    LLAMA SERVER GPU: {%- elif param_spec['items']['type'] == "number" -%}
+DEBUG:    LLAMA SERVER GPU: {{- "number[]" }}
+DEBUG:    LLAMA SERVER GPU: {%- elif param_spec['items']['type'] == "integer" -%}
+DEBUG:    LLAMA SERVER GPU: {{- "number[]" }}
+DEBUG:    LLAMA SERVER GPU: {%- elif param_spec['items']['type'] == "boolean" -%}
+DEBUG:    LLAMA SERVER GPU: {{- "boolean[]" }}
+DEBUG:    LLAMA SERVER GPU: {%- else -%}
+DEBUG:    LLAMA SERVER GPU: {%- set inner_type = render_typescript_type(param_spec['items'], required_params) -%}
+DEBUG:    LLAMA SERVER GPU: {%- if inner_type == "object | object" or inner_type|length > 50 -%}
+DEBUG:    LLAMA SERVER GPU: {{- "any[]" }}
+DEBUG:    LLAMA SERVER GPU: {%- else -%}
+DEBUG:    LLAMA SERVER GPU: {{- inner_type + "[]" }}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {%- if param_spec.nullable -%}
+DEBUG:    LLAMA SERVER GPU: {{- " | null" }}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {%- else -%}
+DEBUG:    LLAMA SERVER GPU: {{- "any[]" }}
+DEBUG:    LLAMA SERVER GPU: {%- if param_spec.nullable -%}
+DEBUG:    LLAMA SERVER GPU: {{- " | null" }}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {%- elif param_spec.type is defined and param_spec.type is iterable and param_spec.type is not string and param_spec.type is not mapping and param_spec.type[0] is defined -%}
+DEBUG:    LLAMA SERVER GPU: {#- Handle array of types like ["object", "object"] from Union[dict, list] #}
+DEBUG:    LLAMA SERVER GPU: {%- if param_spec.type | length > 1 -%}
+DEBUG:    LLAMA SERVER GPU: {{- param_spec.type | join(" | ") }}
+DEBUG:    LLAMA SERVER GPU: {%- else -%}
+DEBUG:    LLAMA SERVER GPU: {{- param_spec.type[0] }}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {%- elif param_spec.oneOf -%}
+DEBUG:    LLAMA SERVER GPU: {#- Handle oneOf schemas - check for complex unions and fallback to any #}
+DEBUG:    LLAMA SERVER GPU: {%- set has_object_variants = false -%}
+DEBUG:    LLAMA SERVER GPU: {%- for variant in param_spec.oneOf -%}
+DEBUG:    LLAMA SERVER GPU: {%- if variant.type == "object" -%}
+DEBUG:    LLAMA SERVER GPU: {%- set has_object_variants = true -%}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {%- endfor -%}
+DEBUG:    LLAMA SERVER GPU: {%- if has_object_variants and param_spec.oneOf|length > 1 -%}
+DEBUG:    LLAMA SERVER GPU: {{- "any" }}
+DEBUG:    LLAMA SERVER GPU: {%- else -%}
+DEBUG:    LLAMA SERVER GPU: {%- for variant in param_spec.oneOf -%}
+DEBUG:    LLAMA SERVER GPU: {{- render_typescript_type(variant, required_params) -}}
+DEBUG:    LLAMA SERVER GPU: {%- if variant.description %}
+DEBUG:    LLAMA SERVER GPU: {{- "// " + variant.description }}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {%- if variant.default is defined %}
+DEBUG:    LLAMA SERVER GPU: {{ "// default: " + variant.default|tojson }}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {%- if not loop.last %}
+DEBUG:    LLAMA SERVER GPU: {{- " | " }}
+DEBUG:    LLAMA SERVER GPU: {% endif -%}
+DEBUG:    LLAMA SERVER GPU: {%- endfor -%}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {%- elif param_spec.type == "string" -%}
+DEBUG:    LLAMA SERVER GPU: {%- if param_spec.enum -%}
+DEBUG:    LLAMA SERVER GPU: {{- '"' + param_spec.enum|join('" | "') + '"' -}}
+DEBUG:    LLAMA SERVER GPU: {%- else -%}
+DEBUG:    LLAMA SERVER GPU: {{- "string" }}
+DEBUG:    LLAMA SERVER GPU: {%- if param_spec.nullable %}
+DEBUG:    LLAMA SERVER GPU: {{- " | null" }}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {%- elif param_spec.type == "number" -%}
+DEBUG:    LLAMA SERVER GPU: {{- "number" }}
+DEBUG:    LLAMA SERVER GPU: {%- elif param_spec.type == "integer" -%}
+DEBUG:    LLAMA SERVER GPU: {{- "number" }}
+DEBUG:    LLAMA SERVER GPU: {%- elif param_spec.type == "boolean" -%}
+DEBUG:    LLAMA SERVER GPU: {{- "boolean" }}
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: {%- elif param_spec.type == "object" -%}
+DEBUG:    LLAMA SERVER GPU: {%- if param_spec.properties -%}
+DEBUG:    LLAMA SERVER GPU: {{- "{
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {%- for prop_name, prop_spec in param_spec.properties.items() -%}
+DEBUG:    LLAMA SERVER GPU: {{- prop_name -}}
+DEBUG:    LLAMA SERVER GPU: {%- if prop_name not in (param_spec.required or []) -%}
+DEBUG:    LLAMA SERVER GPU: {{- "?" }}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {{- ": " }}
+DEBUG:    LLAMA SERVER GPU: {{ render_typescript_type(prop_spec, param_spec.required or []) }}
+DEBUG:    LLAMA SERVER GPU: {%- if not loop.last -%}
+DEBUG:    LLAMA SERVER GPU: {{-", " }}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {%- endfor -%}
+DEBUG:    LLAMA SERVER GPU: {{- "}" }}
+DEBUG:    LLAMA SERVER GPU: {%- else -%}
+DEBUG:    LLAMA SERVER GPU: {{- "object" }}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {%- else -%}
+DEBUG:    LLAMA SERVER GPU: {{- "any" }}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {%- endmacro -%}
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: {%- macro render_tool_namespace(namespace_name, tools) -%}
+DEBUG:    LLAMA SERVER GPU: {{- "## " + namespace_name + "
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "namespace " + namespace_name + " {
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {%- for tool in tools %}
+DEBUG:    LLAMA SERVER GPU: {%- set tool = tool.function %}
+DEBUG:    LLAMA SERVER GPU: {{- "// " + tool.description + "
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "type "+ tool.name + " = " }}
+DEBUG:    LLAMA SERVER GPU: {%- if tool.parameters and tool.parameters.properties %}
+DEBUG:    LLAMA SERVER GPU: {{- "(_: {
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {%- for param_name, param_spec in tool.parameters.properties.items() %}
+DEBUG:    LLAMA SERVER GPU: {%- if param_spec.description %}
+DEBUG:    LLAMA SERVER GPU: {{- "// " + param_spec.description + "
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {%- endif %}
+DEBUG:    LLAMA SERVER GPU: {{- param_name }}
+DEBUG:    LLAMA SERVER GPU: {%- if param_name not in (tool.parameters.required or []) -%}
+DEBUG:    LLAMA SERVER GPU: {{- "?" }}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {{- ": " }}
+DEBUG:    LLAMA SERVER GPU: {{- render_typescript_type(param_spec, tool.parameters.required or []) }}
+DEBUG:    LLAMA SERVER GPU: {%- if param_spec.default is defined -%}
+DEBUG:    LLAMA SERVER GPU: {%- if param_spec.enum %}
+DEBUG:    LLAMA SERVER GPU: {{- ", // default: " + param_spec.default }}
+DEBUG:    LLAMA SERVER GPU: {%- elif param_spec.oneOf %}
+DEBUG:    LLAMA SERVER GPU: {{- "// default: " + param_spec.default }}
+DEBUG:    LLAMA SERVER GPU: {%- else %}
+DEBUG:    LLAMA SERVER GPU: {{- ", // default: " + param_spec.default|tojson }}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {%- if not loop.last %}
+DEBUG:    LLAMA SERVER GPU: {{- ",
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {%- else %}
+DEBUG:    LLAMA SERVER GPU: {{- "
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {%- endfor %}
+DEBUG:    LLAMA SERVER GPU: {{- "}) => any;
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {%- else -%}
+DEBUG:    LLAMA SERVER GPU: {{- "() => any;
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {%- endfor %}
+DEBUG:    LLAMA SERVER GPU: {{- "} // namespace " + namespace_name }}
+DEBUG:    LLAMA SERVER GPU: {%- endmacro -%}
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: {%- macro render_builtin_tools(browser_tool, python_tool) -%}
+DEBUG:    LLAMA SERVER GPU: {%- if browser_tool %}
+DEBUG:    LLAMA SERVER GPU: {{- "## browser
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "// Tool for browsing.
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "// The `cursor` appears in brackets before each browsing display: `[{cursor}]`.
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "// Cite information from the tool using the following format:
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "// `【{cursor}†L{line_start}(-L{line_end})?】`, for example: `【6†L9-L11】` or `【8†L3】`.
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "// Do not quote more than 10 words directly from the tool output.
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "// sources=web (default: web)
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "namespace browser {
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "// Searches for information related to `query` and displays `topn` results.
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "type search = (_: {
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "query: string,
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "topn?: number, // default: 10
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "source?: string,
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "}) => any;
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "// Opens the link `id` from the page indicated by `cursor` starting at line number `loc`, showing `num_lines` lines.
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "// Valid link ids are displayed with the formatting: `【{id}†.*】`.
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "// If `cursor` is not provided, the most recent page is implied.
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "// If `id` is a string, it is treated as a fully qualified URL associated with `source`.
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "// If `loc` is not provided, the viewport will be positioned at the beginning of the document or centered on the most relevant passage, if available.
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "// Use this function without `id` to scroll to a new location of an opened page.
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "type open = (_: {
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "id?: number | string, // default: -1
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "cursor?: number, // default: -1
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "loc?: number, // default: -1
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "num_lines?: number, // default: -1
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "view_source?: boolean, // default: false
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "source?: string,
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "}) => any;
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "// Finds exact matches of `pattern` in the current page, or the page given by `cursor`.
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "type find = (_: {
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "pattern: string,
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "cursor?: number, // default: -1
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "}) => any;
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "} // namespace browser
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: {%- if python_tool %}
+DEBUG:    LLAMA SERVER GPU: {{- "## python
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "Use this tool to execute Python code in your chain of thought. The code will not be shown to the user. This tool should be used for internal reasoning, but not for code that is intended to be visible to the user (e.g. when creating plots, tables, or files).
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "When you send a message containing Python code to python, it will be executed in a stateful Jupyter notebook environment. python will respond with the output of the execution or time out after 120.0 seconds. The drive at '/mnt/data' can be used to save and persist user files. Internet access for this session is UNKNOWN. Depends on the cluster.
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {%- endmacro -%}
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: {#- System Message Construction ============================================ #}
+DEBUG:    LLAMA SERVER GPU: {%- macro build_system_message() -%}
+DEBUG:    LLAMA SERVER GPU: {%- if model_identity is not defined %}
+DEBUG:    LLAMA SERVER GPU: {%- set model_identity = "You are ChatGPT, a large language model trained by OpenAI." %}
+DEBUG:    LLAMA SERVER GPU: {%- endif %}
+DEBUG:    LLAMA SERVER GPU: {{- model_identity + "
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "Knowledge cutoff: 2024-06
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "Current date: " + strftime_now("%Y-%m-%d") + "
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {%- if reasoning_effort is not defined %}
+DEBUG:    LLAMA SERVER GPU: {%- set reasoning_effort = "medium" %}
+DEBUG:    LLAMA SERVER GPU: {%- endif %}
+DEBUG:    LLAMA SERVER GPU: {{- "Reasoning: " + reasoning_effort + "
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {%- if builtin_tools %}
+DEBUG:    LLAMA SERVER GPU: {{- "# Tools
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {%- set available_builtin_tools = namespace(browser=false, python=false) %}
+DEBUG:    LLAMA SERVER GPU: {%- for tool in builtin_tools %}
+DEBUG:    LLAMA SERVER GPU: {%- if tool == "browser" %}
+DEBUG:    LLAMA SERVER GPU: {%- set available_builtin_tools.browser = true %}
+DEBUG:    LLAMA SERVER GPU: {%- elif tool == "python" %}
+DEBUG:    LLAMA SERVER GPU: {%- set available_builtin_tools.python = true %}
+DEBUG:    LLAMA SERVER GPU: {%- endif %}
+DEBUG:    LLAMA SERVER GPU: {%- endfor %}
+DEBUG:    LLAMA SERVER GPU: {{- render_builtin_tools(available_builtin_tools.browser, available_builtin_tools.python) }}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {{- "# Valid channels: analysis, commentary, final. Channel must be included for every message." }}
+DEBUG:    LLAMA SERVER GPU: {%- if tools -%}
+DEBUG:    LLAMA SERVER GPU: {{- "
+DEBUG:    LLAMA SERVER GPU: Calls to these tools must go to the commentary channel: 'functions'." }}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {%- endmacro -%}
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: {#- Main Template Logic ================================================= #}
+DEBUG:    LLAMA SERVER GPU: {#- Set defaults #}
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: {#- Render system message #}
+DEBUG:    LLAMA SERVER GPU: {{- "<|start|>system<|message|>" }}
+DEBUG:    LLAMA SERVER GPU: {{- build_system_message() }}
+DEBUG:    LLAMA SERVER GPU: {{- "<|end|>" }}
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: {#- Extract developer message #}
+DEBUG:    LLAMA SERVER GPU: {%- if messages[0].role == "developer" or messages[0].role == "system" %}
+DEBUG:    LLAMA SERVER GPU: {%- set developer_message = messages[0].content %}
+DEBUG:    LLAMA SERVER GPU: {%- set loop_messages = messages[1:] %}
+DEBUG:    LLAMA SERVER GPU: {%- else %}
+DEBUG:    LLAMA SERVER GPU: {%- set developer_message = "" %}
+DEBUG:    LLAMA SERVER GPU: {%- set loop_messages = messages %}
+DEBUG:    LLAMA SERVER GPU: {%- endif %}
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: {#- Render developer message #}
+DEBUG:    LLAMA SERVER GPU: {%- if developer_message or tools %}
+DEBUG:    LLAMA SERVER GPU: {{- "<|start|>developer<|message|>" }}
+DEBUG:    LLAMA SERVER GPU: {%- if developer_message %}
+DEBUG:    LLAMA SERVER GPU: {{- "# Instructions
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- developer_message }}
+DEBUG:    LLAMA SERVER GPU: {%- endif %}
+DEBUG:    LLAMA SERVER GPU: {%- if tools -%}
+DEBUG:    LLAMA SERVER GPU: {{- "
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- "# Tools
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: " }}
+DEBUG:    LLAMA SERVER GPU: {{- render_tool_namespace("functions", tools) }}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {{- "<|end|>" }}
+DEBUG:    LLAMA SERVER GPU: {%- endif %}
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: {#- Render messages #}
+DEBUG:    LLAMA SERVER GPU: {%- set last_tool_call = namespace(name=none) %}
+DEBUG:    LLAMA SERVER GPU: {%- for message in loop_messages -%}
+DEBUG:    LLAMA SERVER GPU: {#- At this point only assistant/user/tool messages should remain #}
+DEBUG:    LLAMA SERVER GPU: {%- if message.role == 'assistant' -%}
+DEBUG:    LLAMA SERVER GPU: {#- Checks to ensure the messages are being passed in the format we expect #}
+DEBUG:    LLAMA SERVER GPU: {%- if "content" in message %}
+DEBUG:    LLAMA SERVER GPU: {%- if "<|channel|>analysis<|message|>" in message.content or "<|channel|>final<|message|>" in message.content %}
+DEBUG:    LLAMA SERVER GPU: {{- raise_exception("You have passed a message containing <|channel|> tags in the content field. Instead of doing this, you should pass analysis messages (the string between '<|message|>' and '<|end|>') in the 'thinking' field, and final messages (the string between '<|message|>' and '<|end|>') in the 'content' field.") }}
+DEBUG:    LLAMA SERVER GPU: {%- endif %}
+DEBUG:    LLAMA SERVER GPU: {%- endif %}
+DEBUG:    LLAMA SERVER GPU: {%- if "thinking" in message %}
+DEBUG:    LLAMA SERVER GPU: {%- if "<|channel|>analysis<|message|>" in message.thinking or "<|channel|>final<|message|>" in message.thinking %}
+DEBUG:    LLAMA SERVER GPU: {{- raise_exception("You have passed a message containing <|channel|> tags in the thinking field. Instead of doing this, you should pass analysis messages (the string between '<|message|>' and '<|end|>') in the 'thinking' field, and final messages (the string between '<|message|>' and '<|end|>') in the 'content' field.") }}
+DEBUG:    LLAMA SERVER GPU: {%- endif %}
+DEBUG:    LLAMA SERVER GPU: {%- endif %}
+DEBUG:    LLAMA SERVER GPU: {%- if "tool_calls" in message %}
+DEBUG:    LLAMA SERVER GPU: {#- We assume max 1 tool call per message, and so we infer the tool call name #}
+DEBUG:    LLAMA SERVER GPU: {#- in "tool" messages from the most recent assistant tool call name #}
+DEBUG:    LLAMA SERVER GPU: {%- set tool_call = message.tool_calls[0] %}
+DEBUG:    LLAMA SERVER GPU: {%- if tool_call.function %}
+DEBUG:    LLAMA SERVER GPU: {%- set tool_call = tool_call.function %}
+DEBUG:    LLAMA SERVER GPU: {%- endif %}
+DEBUG:    LLAMA SERVER GPU: {%- if message.content and message.thinking %}
+DEBUG:    LLAMA SERVER GPU: {{- raise_exception("Cannot pass both content and thinking in an assistant message with tool calls! Put the analysis message in one or the other, but not both.") }}
+DEBUG:    LLAMA SERVER GPU: {%- elif message.content %}
+DEBUG:    LLAMA SERVER GPU: {{- "<|start|>assistant<|channel|>analysis<|message|>" + message.content + "<|end|>" }}
+DEBUG:    LLAMA SERVER GPU: {%- elif message.thinking %}
+DEBUG:    LLAMA SERVER GPU: {{- "<|start|>assistant<|channel|>analysis<|message|>" + message.thinking + "<|end|>" }}
+DEBUG:    LLAMA SERVER GPU: {%- endif %}
+DEBUG:    LLAMA SERVER GPU: {{- "<|start|>assistant to=" }}
+DEBUG:    LLAMA SERVER GPU: {{- "functions." + tool_call.name + "<|channel|>commentary " }}
+DEBUG:    LLAMA SERVER GPU: {{- (tool_call.content_type if tool_call.content_type is defined else "json") + "<|message|>" }}
+DEBUG:    LLAMA SERVER GPU: {{- tool_call.arguments|tojson }}
+DEBUG:    LLAMA SERVER GPU: {{- "<|call|>" }}
+DEBUG:    LLAMA SERVER GPU: {%- set last_tool_call.name = tool_call.name %}
+DEBUG:    LLAMA SERVER GPU: {%- elif loop.last and not add_generation_prompt %}
+DEBUG:    LLAMA SERVER GPU: {#- Only render the CoT if the final turn is an assistant turn and add_generation_prompt is false #}
+DEBUG:    LLAMA SERVER GPU: {#- This is a situation that should only occur in training, never in inference. #}
+DEBUG:    LLAMA SERVER GPU: {%- if "thinking" in message %}
+DEBUG:    LLAMA SERVER GPU: {{- "<|start|>assistant<|channel|>analysis<|message|>" + message.thinking + "<|end|>" }}
+DEBUG:    LLAMA SERVER GPU: {%- endif %}
+DEBUG:    LLAMA SERVER GPU: {#- <|return|> indicates the end of generation, but <|end|> does not #}
+DEBUG:    LLAMA SERVER GPU: {#- <|return|> should never be an input to the model, but we include it as the final token #}
+DEBUG:    LLAMA SERVER GPU: {#- when training, so the model learns to emit it. #}
+DEBUG:    LLAMA SERVER GPU: {{- "<|start|>assistant<|channel|>final<|message|>" + message.content + "<|return|>" }}
+DEBUG:    LLAMA SERVER GPU: {%- else %}
+DEBUG:    LLAMA SERVER GPU: {#- CoT is dropped during all previous turns, so we never render it for inference #}
+DEBUG:    LLAMA SERVER GPU: {{- "<|start|>assistant<|channel|>final<|message|>" + message.content + "<|end|>" }}
+DEBUG:    LLAMA SERVER GPU: {%- set last_tool_call.name = none %}
+DEBUG:    LLAMA SERVER GPU: {%- endif %}
+DEBUG:    LLAMA SERVER GPU: {%- elif message.role == 'tool' -%}
+DEBUG:    LLAMA SERVER GPU: {%- if last_tool_call.name is none %}
+DEBUG:    LLAMA SERVER GPU: {{- raise_exception("Message has tool role, but there was no previous assistant message with a tool call!") }}
+DEBUG:    LLAMA SERVER GPU: {%- endif %}
+DEBUG:    LLAMA SERVER GPU: {{- "<|start|>functions." + last_tool_call.name }}
+DEBUG:    LLAMA SERVER GPU: {{- " to=assistant<|channel|>commentary<|message|>" + message.content|tojson + "<|end|>" }}
+DEBUG:    LLAMA SERVER GPU: {%- elif message.role == 'user' -%}
+DEBUG:    LLAMA SERVER GPU: {{- "<|start|>user<|message|>" + message.content + "<|end|>" }}
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}
+DEBUG:    LLAMA SERVER GPU: {%- endfor -%}
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: {#- Generation prompt #}
+DEBUG:    LLAMA SERVER GPU: {%- if add_generation_prompt -%}
+DEBUG:    LLAMA SERVER GPU: <|start|>assistant
+DEBUG:    LLAMA SERVER GPU: {%- endif -%}, example_format: '<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.
+DEBUG:    LLAMA SERVER GPU: Knowledge cutoff: 2024-06
+DEBUG:    LLAMA SERVER GPU: Current date: 2025-08-15
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: Reasoning: medium
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: # Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>developer<|message|># Instructions
+DEBUG:    LLAMA SERVER GPU:
+DEBUG:    LLAMA SERVER GPU: You are a helpful assistant<|end|><|start|>user<|message|>Hello<|end|><|start|>assistant<|channel|>final<|message|>Hi there<|end|><|start|>user<|message|>How are you?<|end|><|start|>assistant'
+DEBUG:    LLAMA SERVER GPU: main: server is listening on http://127.0.0.1:50281 - starting the main loop
+DEBUG:    LLAMA SERVER GPU: srv  update_slots: all slots are idle
+DEBUG:    Starting new HTTP connection (1): localhost:50281
+DEBUG:    http://localhost:50281 "GET /health HTTP/1.1" 200 15
+DEBUG:    LLAMA SERVER GPU: srv  log_server_r: request: GET /health 127.0.0.1 200
+DEBUG:    Testing llama-server readiness (will retry until ready), result: {'status': 'ok'}
+INFO:     ::1:50279 - "POST /api/v0/load HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "POST /api/v0/load HTTP/1.1" 200 100
+DEBUG:    Total request time (streamed): 9.4126 seconds
+DEBUG:    Total request time (streamed): 0.0007 seconds
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50289 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 749
+DEBUG:    Total request time (streamed): 0.0019 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50290 - "GET /api/v0/health HTTP/1.1" 200
+DEBUG:    Total request time (streamed): 0.0007 seconds
+DEBUG:    http://localhost:8000 "GET /api/v0/health HTTP/1.1" 200 203
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50291 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 749
+DEBUG:    Total request time (streamed): 0.0021 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Chat completions request parameters: {'model': 'user.Openai_gpt-oss-20b-CODER-NEO-CODE-DI-MATRIX-GGUF', 'stream': True, 'logprobs': False, 'stop': None, 'temperature': 0.5, 'repeat_penalty': None, 'top_k': None, 'top_p': None, 'tools': None, 'max_tokens': 6000, 'max_completion_tokens': None, 'response_format': None}
+INFO:     127.0.0.1:50292 - "POST /api/v1/chat/completions HTTP/1.1" 200
+DEBUG:    Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-f9adf308-c4e1-474f-8642-4507fe4ed763', 'json_data': {'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '# Role\n\nYou are an expert software developer. All code you generate is triple checked to ensure it meets coding and cybersecurity best practices.\n\n# Task\n\nRevise this code for FreeBSD to ensure iwlwifi0_wlan is enabled and remains functioning at all times. Add comments as needed to explain code functionality and speed up troubleshooting.\n\n`#!/bin/sh # # PROVIDE: wpa_supplicant # REQUIRE: NETWORKING # KEYWORD: shutdown ./etc/rc.subr ./etc/network.subr name="wpa_supplicant" desc="WPA/802.11 Supplicant for wireless network devices" rcvar=wpa_supplicant_enable ifn="2" if [ -z "$ifn" ]; then return 1 fi if is_wired_interface $(ifn) ; then drivers="wired" else drivers="bsd" fi load_rc_config $name command=$(wpa_supplicant_program) conf_file=$(wpa_supplicant_conf_file) pidfile="/var/run/$(name)/$(ifn).pid" command_args="-B -i -ifn -c $conf_file -D $driver -P $pidfile" required_files=$conf_file required_modules="wlan_wep wlan_tkip wlan_ccmp" run_rc_command "$1"`\n\n# Output Format\n\nPut all code in a dedicated code tag block for easy reading.'}]}], 'model': 'user.Openai_gpt-oss-20b-CODER-NEO-CODE-DI-MATRIX-GGUF', 'max_tokens': 6000, 'stream': True, 'temperature': 0.5}}
+DEBUG:    Sending HTTP Request: POST http://127.0.0.1:50281/v1/chat/completions
+DEBUG:    connect_tcp.started host='127.0.0.1' port=50281 local_address=None timeout=5.0 socket_options=None
+DEBUG:    connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000028633611570>
+DEBUG:    send_request_headers.started request=<Request [b'POST']>
+DEBUG:    send_request_headers.complete
+DEBUG:    send_request_body.started request=<Request [b'POST']>
+DEBUG:    send_request_body.complete
+DEBUG:    receive_response_headers.started request=<Request [b'POST']>
+DEBUG:    LLAMA SERVER GPU: srv  params_from_: Chat format: GPT-OSS
+DEBUG:    receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Transfer-Encoding', b'chunked'), (b'Server', b'llama.cpp'), (b'Access-Control-Allow-Origin', b''), (b'Content-Type', b'text/event-stream'), (b'Keep-Alive', b'timeout=5, max=100')])
+DEBUG:    LLAMA SERVER GPU: slot launch_slot_: id  0 | task 0 | processing task
+INFO:     HTTP Request: POST http://127.0.0.1:50281/v1/chat/completions "HTTP/1.1 200 OK"
+DEBUG:    LLAMA SERVER GPU: slot update_slots: id  0 | task 0 | new prompt, n_ctx_slot = 4096, n_keep = 0, n_prompt_tokens = 346
+DEBUG:    HTTP Response: POST http://127.0.0.1:50281/v1/chat/completions "200 OK" Headers({'transfer-encoding': 'chunked', 'server': 'llama.cpp', 'access-control-allow-origin': '', 'content-type': 'text/event-stream', 'keep-alive': 'timeout=5, max=100'})
+DEBUG:    LLAMA SERVER GPU: slot update_slots: id  0 | task 0 | kv cache rm [0, end)
+DEBUG:    request_id: None
+DEBUG:    LLAMA SERVER GPU: slot update_slots: id  0 | task 0 | prompt processing progress, n_past = 346, n_tokens = 346, progress = 1.000000
+DEBUG:    receive_response_body.started request=<Request [b'POST']>
+DEBUG:    LLAMA SERVER GPU: slot update_slots: id  0 | task 0 | prompt done, n_past = 346, n_tokens = 346
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50294 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 749
+DEBUG:    Total request time (streamed): 0.0019 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50295 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 749
+DEBUG:    Total request time (streamed): 0.0025 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50297 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 749
+DEBUG:    Total request time (streamed): 0.0012 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50298 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 749
+DEBUG:    Total request time (streamed): 0.0016 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50300 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 749
+DEBUG:    Total request time (streamed): 0.0014 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50302 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    Total request time (streamed): 0.0022 seconds
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 749
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50303 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    Total request time (streamed): 0.0010 seconds
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 749
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50306 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 749
+DEBUG:    Total request time (streamed): 0.0013 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50307 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 749
+DEBUG:    Total request time (streamed): 0.0026 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50308 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 749
+DEBUG:    Total request time (streamed): 0.0012 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50309 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 749
+DEBUG:    Total request time (streamed): 0.0017 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50310 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 749
+DEBUG:    Total request time (streamed): 0.0013 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50311 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 749
+DEBUG:    Total request time (streamed): 0.0017 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50312 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 749
+DEBUG:    Total request time (streamed): 0.0016 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50313 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 749
+DEBUG:    Total request time (streamed): 0.0014 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    LLAMA SERVER GPU: slot      release: id  0 | task 0 | stop processing: n_past = 4095, truncated = 0
+DEBUG:    LLAMA SERVER GPU: slot print_timing: id  0 | task 0 |
+DEBUG:    LLAMA SERVER GPU: prompt eval time =     705.85 ms /   346 tokens (    2.04 ms per token,   490.19 tokens per second)
+DEBUG:    receive_response_body.complete
+DEBUG:    LLAMA SERVER GPU: eval time =  149035.27 ms /  3750 tokens (   39.74 ms per token,    25.16 tokens per second)
+DEBUG:    response_closed.started
+DEBUG:    LLAMA SERVER GPU: total time =  149741.12 ms /  4096 tokens
+DEBUG:    response_closed.complete
+DEBUG:    LLAMA SERVER GPU: srv  update_slots: all slots are idle
+DEBUG:    close.started
+DEBUG:    LLAMA SERVER GPU: srv  log_server_r: request: POST /v1/chat/completions 127.0.0.1 200
+DEBUG:    close.complete
+DEBUG:    ╒═══════════════╤═════════╕
+          │ Metric        │   Value │
+          ╞═══════════════╪═════════╡
+          │ Input tokens  │  346    │
+          ├───────────────┼─────────┤
+          │ Output tokens │ 3750    │
+          ├───────────────┼─────────┤
+          │ TTFT (s)      │    0.71 │
+          ├───────────────┼─────────┤
+          │ TPS           │   25.16 │
+          ╘═══════════════╧═════════╛
+DEBUG:    Total request time (streamed): 150.1354 seconds
