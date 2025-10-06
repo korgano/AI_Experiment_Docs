@@ -1,0 +1,19 @@
+<poml>
+<runtime
+      temperature="0.8" 
+      maxTokens="0" 
+      model="Gemma-3-4b-it-FLM"
+      topP="0.9" />
+<task>
+<Image src="Image.png" alt="" />
+
+Analyze the image in this prompt and describe its contents.
+
+<list>
+<item>Reanalyze image as necessary to ensure accuracy.</item>
+<item>Begin output with known facts obtained from image.</item>
+<item>Preface all uncertain or conjectural out put with "This might be..."</item>
+<item>End output with a summary of findings.</item>
+</list>
+</task>
+</poml>

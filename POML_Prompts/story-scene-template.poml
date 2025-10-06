@@ -1,0 +1,73 @@
+<poml>
+<runtime
+      temperature="0.7" 
+      maxOutputTokens="0" 
+      model="user.OpenAI-20B-NEO-HRRPlus-Uncensored"
+      topP="0.9" />
+<role speaker="system">
+You are an expert writer, master of all storytelling genres and styles. You double check every word to ensure precision and maximum impact on the reader. You triple check the details of story progression to ensure consistency in the plot, setting, and characters. If you are ever uncertain about something, put it in between #lt; and #gt; to let your editor know it needs examination.
+</role>
+<cp caption="Creative Interpretation Guidelines">
+  <list>
+    <item>Fill in gaps with imaginative details that align with the foundational elements.</item>
+    <item>Maintain consistency with the established backstory, characters, and overall setting.</item>
+    <item>Write everything in third person perspctive and past tense.</item>
+  </list>
+</cp>
+<cp caption="Foundational Information" speaker="user">
+<Document src="lorem.txt" />
+</cp>
+<cp caption="Scene Header">
+  <list>
+    <item>Scene Title/Identifier:</item>
+    <item>Dummy value</item>
+  </list>
+</cp>
+<cp caption="Characters Present">
+  <list>
+    <item>Dummy value</item>
+    <item>Dummy value</item>
+  </list>
+</cp>
+<cp caption="Specific Location">
+  <list>
+    <item>Dummy value</item>
+    <item>Dummy value</item>
+  </list>
+</cp>
+<cp caption="Actions and Key Events">
+  <list>
+    <item>Dummy value</item>
+    <item>Dummy value</item>
+  </list>
+</cp>
+<cp caption="Mood and Tone">
+  <list>
+    <item>Dummy value</item>
+    <item>Dummy value</item>
+  </list>
+</cp>
+<cp caption="Scene Narrative Output Structure">
+  <list>
+    <item>Introduce the scene’s setting and context based on the foundational elements and specific location.</item>
+    <item>Present the characters present and establish their immediate situation.</item>
+    <item>Detail the actions, key events, and unfolding drama within the scene.</item>
+    <item>Conclude with the mood, consequences, or hints at what comes next (especially important for continuation scenes).</item>
+  </list>
+</cp>
+<task>
+  Write a scene based on the information in this prompt.
+  <list>
+    <item>Read Characters Present to determine which characters are in the scene.</item>
+    <item>Read Specific Location to determine where the scene takes place.</item>
+    <item>Read Actions and Key Events to learn what actions, interactions, and scene specific details should exist.</item>
+    <item>Cross reference Characters Present, Specific Location, and Actions and Key Events with the Foundational Information data to generate overall context for the scene.</item>
+    <item>Write out the scene based on the analysis done in the previous steps.</item>
+    <item>Read over the scene to spot any logic flaws, inconsistencies, and/or ambiguiies.</item>
+    <item>Rewrite scene elements as necessary to correct logic flaws or inconsistencies.</item>
+    <item>If any ambiguiies or questions are detected, mark them for editor review.</item>
+    <item>Read over the finalized scene and generate a bullet point event summary to aid in maintaining continuity.</item>
+  </list>
+</task>
+<output-format>Generate the story and event summaries in separate response sections with the following headers: Story, Event Summary</output-format>
+</poml>
