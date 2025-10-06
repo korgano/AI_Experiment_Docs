@@ -1,0 +1,24 @@
+[⬇️ ]  Incoming Request: POST
+[LOG]  Time stamp: 12:14:22 10:02:2025
+[LOG]  Target: /v1/chat/completions
+[LOG]  Version: 11
+[LOG]  Keep-Alive: 1
+[LOG]  Body:
+{
+    "messages": [
+        {
+            "content": "# Role\n\nYo...y reading.",
+            "role": "user"
+        }
+    ],
+    "model": "gemma3:4b",
+    "stream": true,
+    "temperature": 0.7,
+    "top_p": 0.95
+}
+[🟢 ]  NPU Locked!
+[FLM]  Start generating...
+[FLM]  Total images: 0
+ChatCompletionChunk: {"id":"chatcmpl-b17e2eba7a67c40777d6a279","object":"chat.completion.chunk","created":1759421662,"model":"gemma3:4b","system_fingerprint":"fp_7b2d49d1995eb514","usage":{"prompt_tokens":420,"completion_tokens":697,"total_tokens":1117,"load_duration":7e-07,"prefill_duration_ttft":1.762078976,"decoding_duration":56.398995456,"prefill_speed_tps":238.3548102670286,"decoding_speed_tps":12.358376144195132}}
+[🔒 ]  Closing TCP connection (streaming, non-keep-alive)
+[🔵 ]  NPU Lock Released!
