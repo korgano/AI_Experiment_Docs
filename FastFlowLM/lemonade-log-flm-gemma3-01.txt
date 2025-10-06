@@ -1,0 +1,109 @@
+{'type': 'text', 'text': ' Analyze the image in this prompt and describe its contents. \n\n- Reanalyze image as necessary to ensure accuracy.\n- Begin output with known facts obtained from image.\n- Preface all uncertain or conjectural out put with "This might be..."\n- End output with a summary of findings.'}]}], 'model': 'gemma3:4b', 'stream': True, 'temperature': 0.8, 'top_p': 0.9}}
+DEBUG:    Sending HTTP Request: POST http://localhost:11434/v1/chat/completions
+DEBUG:    connect_tcp.started host='localhost' port=11434 local_address=None timeout=5.0 socket_options=None
+DEBUG:    connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001A32AEDABF0>
+DEBUG:    send_request_headers.started request=<Request [b'POST']>
+DEBUG:    send_request_headers.complete
+DEBUG:    send_request_body.started request=<Request [b'POST']>
+DEBUG:    send_request_body.complete
+DEBUG:    receive_response_headers.started request=<Request [b'POST']>
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50472 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 2145
+DEBUG:    Total request time (streamed): 0.0029 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50473 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 2145
+DEBUG:    Total request time (streamed): 0.0020 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50474 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 2145
+DEBUG:    Total request time (streamed): 0.0020 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50475 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 2145
+DEBUG:    Total request time (streamed): 0.0025 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50476 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 2145
+DEBUG:    Total request time (streamed): 0.0020 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50479 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 2145
+DEBUG:    Total request time (streamed): 0.0020 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50480 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 2145
+DEBUG:    Total request time (streamed): 0.0039 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50482 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 2145
+DEBUG:    Total request time (streamed): 0.0022 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50483 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 2145
+DEBUG:    Total request time (streamed): 0.0020 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50484 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 2145
+DEBUG:    Total request time (streamed): 0.0030 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    FLM SERVER: [FLM]  Starting server on port 8000...
+DEBUG:    FLM SERVER: [FLM]  WebServer started on port 8000 with 10 I/O threads
+DEBUG:    FLM SERVER: [FLM]  Enter 'exit' to stop the server:
+DEBUG:    receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'text/event-stream'), (b'Cache-Control', b'no-cache'), (b'Connection', b'keep-alive'), (b'Transfer-Encoding', b'chunked')])
+INFO:     HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+DEBUG:    HTTP Response: POST http://localhost:11434/v1/chat/completions "200 OK" Headers({'content-type': 'text/event-stream', 'cache-control': 'no-cache', 'connection': 'keep-alive', 'transfer-encoding': 'chunked'})
+DEBUG:    request_id: None
+DEBUG:    receive_response_body.started request=<Request [b'POST']>
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50485 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 2145
+DEBUG:    Total request time (streamed): 0.0027 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50486 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 2145
+DEBUG:    Total request time (streamed): 0.0023 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50487 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 2145
+DEBUG:    Total request time (streamed): 0.0021 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50488 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 2145
+DEBUG:    Total request time (streamed): 0.0020 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    Starting new HTTP connection (1): localhost:8000
+INFO:     ::1:50489 - "GET /api/v0/models HTTP/1.1" 200
+DEBUG:    http://localhost:8000 "GET /api/v0/models HTTP/1.1" 200 2145
+DEBUG:    Total request time (streamed): 0.0023 seconds
+DEBUG:    Model mapping updated in background
+DEBUG:    receive_response_body.complete
+DEBUG:    response_closed.started
+DEBUG:    response_closed.complete
+DEBUG:    close.started
+DEBUG:    close.complete
+DEBUG:    â•’â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•¤â•â•â•â•â•â•â•â•â•â••
+          â”‚ Metric        â”‚ Value   â”‚
+          â•žâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•ªâ•â•â•â•â•â•â•â•â•â•¡
+          â”‚ Input tokens  â”‚         â”‚
+          â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+          â”‚ Output tokens â”‚         â”‚
+          â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+          â”‚ TTFT (s)      â”‚ N/A     â”‚
+          â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+          â”‚ TPS           â”‚ N/A     â”‚
+          â•˜â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•§â•â•â•â•â•â•â•â•â•â•›
+DEBUG:    Total request time (streamed): 155.7895 seconds

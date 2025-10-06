@@ -1,0 +1,50 @@
+2025-10-02 10:26:09.528 [info] Testing prompt with chat model: c:\Users\Pro User\Documents\POML\FastFlow-image-unreal.poml
+2025-10-02 10:26:09.768 [info] Model overridden from 'user.Openai_gpt-oss-20b-CODER-NEO-CODE-DI-MATRIX-GGUF' to 'Gemma-3-4b-it-FLM' by runtime
+2025-10-02 10:26:09.768 [info] [Request parameters] {"model":{"specificationVersion":"v2","supportedUrls":{"image/*":[{}]},"modelId":"Gemma-3-4b-it-FLM","config":{"provider":"openai.chat"}},"maxRetries":0,"temperature":0.8,"maxTokens":0,"topP":0.9}
+2025-10-02 10:26:10.540 [info] Test in progress. 1 seconds elapsed.
+2025-10-02 10:26:12.552 [info] Test in progress. 3 seconds elapsed.
+2025-10-02 10:26:16.565 [info] Test in progress. 7 seconds elapsed.
+
+
+Okay, let’s analyze the image provided.
+
+**Known Facts:**
+
+*   The screenshot is taken from within the Unreal Engine 5 editor.
+*   It appears to be a scene focused on simulating a stylized, almost painterly look – hence the "Cook" and “Stylize” options highlighted in the bottom left corner.
+*   There are several elements related to capturing and processing images/video, including “Source Control,” “Capture,” and references to “Sky Reflection.”
+*   The interface shows various panels for controlling different aspects of the scene: Content Browser, World Outliner, Details panel, etc.
+*   Several UI elements are selected or highlighted, indicating specific actions being considered or attempted (e.g., “Open Level”, “Save Current”).
+*   The scene contains multiple actors with names like “PlayerStart,” “SkyLight,” and “Ground.”
+*   The user seems to be experimenting with different lighting setups and potentially using procedural generation techniques.
+
+**Uncertainties & Conjectures:**
+
+*   **Specific Project Context:** Without more information about the project's purpose, it's difficult to say precisely what the user is trying to achieve. The focus on stylized visuals and reflection suggests an artistic endeavor.
+*   **“Cook” Process:**  The prominent mention of “Cook” likely refers to the Unreal Engine’s baking process—where textures, lights, and other data are pre-calculated and stored as static data. This optimization improves performance during gameplay.
+*   **Procedural Generation:** The presence of tools and settings related to procedural generation hints at the use of algorithms to create content automatically.
+*   **Sky Reflection Implementation:** The emphasis on “Sky Reflection” indicates that the developer is attempting to realistically simulate reflections off a sky element. This often involves complex calculations and potentially using external assets or plugins.
+*   **User Intent:** It’s unclear whether the user is debugging a problem, exploring new features, or simply experimenting with different visual styles.
+
+
+
+**Detailed Breakdown by Panel:**
+
+*   **Content Browser:** Shows the organized structure of assets within the project.
+*   **World Outliner:** Lists all actors present in the current level.
+*   **Details Panel:** Allows modification of actor properties such as materials, collision, and visibility.
+*   **Toolbar:** Provides quick access to common operations like saving, loading, and navigating the editor.
+*   **Properties Window:** Displays the detailed properties of the currently selected object.
+*   **Viewport:** The main area where the scene is visually displayed.
+*   **Search Bar:** Used to find specific assets or objects within the project.
+
+
+**Summary of Findings:**
+
+This screenshot depicts a Unreal Engine 5 artist or designer working on a stylized scene, most likely focusing on creating a visually rich environment with realistic reflections and possibly incorporating procedural generation techniques. They are actively engaged in optimizing the scene through baking processes and experimenting with different visual effects. The overall impression is one of creative exploration and technical implementation aimed at achieving a particular aesthetic style.2025-10-02 10:27:08.718 [error] AI_TypeValidationError: Type validation failed: Value: {"id":"chatcmpl-65ef8d92ed0e002a227c824b","object":"chat.completion.chunk","created":1759415172,"model":"gemma3:4b","system_fingerprint":"fp_c88ec96418e14137","usage":{"prompt_tokens":329,"completion_tokens":628,"total_tokens":957,"load_duration":8e-7,"prefill_duration_ttft":6.501741056,"decoding_duration":50.14380544,"prefill_speed_tps":50.60183067370686,"decoding_speed_tps":12.523979671854757}}.
+Error message: [{"code":"invalid_union","errors":[[{"expected":"array","code":"invalid_type","path":["choices"],"message":"Invalid input: expected array, received undefined"}],[{"expected":"object","code":"invalid_type","path":["error"],"message":"Invalid input: expected object, received undefined"}]],"path":[],"message":"Invalid input"}]
+	at Object.validate (c:\Users\Pro User\.vscode\extensions\poml-team.poml-0.0.9-nightly.202509062201\dist\extension.js:67319:14)
+	at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+	at async safeValidateTypes (c:\Users\Pro User\.vscode\extensions\poml-team.poml-0.0.9-nightly.202509062201\dist\extension.js:67347:20)
+	at async safeParseJSON (c:\Users\Pro User\.vscode\extensions\poml-team.poml-0.0.9-nightly.202509062201\dist\extension.js:67392:12)
+	at async Object.transform (c:\Users\Pro User\.vscode\extensions\poml-team.poml-0.0.9-nightly.202509062201\dist\extension.js:67422:28)

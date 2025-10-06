@@ -1,0 +1,86 @@
+2025-10-02 12:14:20.768 [info] Testing prompt with chat model: c:\Users\Pro User\Documents\POML\wpa_supplicant_runtime.poml
+2025-10-02 12:14:20.786 [info] Model overridden from 'user.Openai_gpt-oss-20b-CODER-NEO-CODE-DI-MATRIX-GGUF' to 'Gemma-3-4b-it-FLM' by runtime
+2025-10-02 12:14:20.786 [info] [Request parameters] {"model":{"specificationVersion":"v2","supportedUrls":{"image/*":[{}]},"modelId":"Gemma-3-4b-it-FLM","config":{"provider":"openai.chat"}},"maxRetries":0,"temperature":0.7,"maxTokens":0,"topP":0.95,"frequencyPenalty":1.1}
+2025-10-02 12:14:21.781 [info] Test in progress. 1 seconds elapsed.
+2025-10-02 12:14:23.791 [info] Test in progress. 3 seconds elapsed.
+
+```sh
+#!/bin/sh
+
+# PROVIDE: wpa_supplicant-freebsd
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+# DESCRIPTION: WPA/802.11 Supplicant for wireless network devices on FreeBSD.
+# This script ensures wpa_supplicant is properly configured and enabled persistently.
+
+# Configuration variables - Stored in /etc/rc.conf.local to ensure persistence across reboots
+CONF_FILE="/var/etc/wpa_supplicant_iwlwifi0_wlan0.conf" # Path to the wpa_supplicant configuration file
+INTERFACE="iwlwifi0_wlan0" # Interface name
+PID_FILE="/var/run/${INTERFACE}.pid" # PID File Location
+
+# Function to handle errors gracefully
+handle_error() {
+    echo "Error: $@" >&2  # Print error message to standard error
+    exit 1 # Exit with an error code
+}
+
+
+# Check if the configuration file exists
+if [ ! -f "$CONF_FILE" ]; then
+    handle_error "Configuration file '$CONF_FILE' does not exist."
+fi
+
+# Check if the interface exists
+if [ ! -e "/dev/$INTERFACE" ]; then
+    handle_error "Interface '$INTERFACE' does not seem to be present or configured correctly."
+fi
+
+
+
+# Load RC config
+load_rc_config "${name}"
+
+# Determine driver type (wired or BSD)
+if [[ -z "$ifn" ]]; then
+    driver="bsd" # Default to BSD if no interface specified
+else
+    driver="wimax" # Set driver based on interface
+fi
+
+
+# Ensure wpa_supplicant is running after a restart
+# Add the interface enable command to /etc/rc.conf.local
+# This makes sure that the interface is up automatically at boot time.
+# We are using rc_subr here as it provides the correct way to modify rc.conf.local.
+if [ ! -f "/etc/rc.conf.local" ]; then
+   echo "" > /etc/rc.conf.local
+fi
+
+# Add the interface enable command to /etc/rc.conf.local
+cat <<EOF >> /etc/rc.conf.local
+IF_WLAN0_${INTERFACE}_UP=YES
+EOF
+
+# Verify the changes made to /etc/rc.conf.local
+if [ ! -f "/etc/rc.conf.local" ] || grep -q "^IF_WLAN0_${INTERFACE}_UP=YES" /etc/rc.conf.local; then
+    handle_error "Failed to add interface enable setting to /etc/rc.conf.local"
+fi
+
+# Execute the wpa_supplicant command with proper arguments
+command=$(wpa_supplicant_program)
+command_args="-B -i -ifn -c ${CONF_FILE} -D ${driver} -P ${PID_FILE}"
+
+# Run wpa_supplicant in the background, logging to syslog
+run_rc_command "$1"
+
+# Cleanup - Remove temporary files (optional but recommended)
+# rm -f "${PID_FILE}"
+
+exit 0
+```2025-10-02 12:15:21.021 [error] AI_TypeValidationError: Type validation failed: Value: {"id":"chatcmpl-b17e2eba7a67c40777d6a279","object":"chat.completion.chunk","created":1759421662,"model":"gemma3:4b","system_fingerprint":"fp_7b2d49d1995eb514","usage":{"prompt_tokens":420,"completion_tokens":697,"total_tokens":1117,"load_duration":7e-7,"prefill_duration_ttft":1.762078976,"decoding_duration":56.398995456,"prefill_speed_tps":238.3548102670286,"decoding_speed_tps":12.358376144195132}}.
+Error message: [{"code":"invalid_union","errors":[[{"expected":"array","code":"invalid_type","path":["choices"],"message":"Invalid input: expected array, received undefined"}],[{"expected":"object","code":"invalid_type","path":["error"],"message":"Invalid input: expected object, received undefined"}]],"path":[],"message":"Invalid input"}]
+	at Object.validate (c:\Users\Pro User\.vscode\extensions\poml-team.poml-0.0.9-nightly.202509062201\dist\extension.js:67319:14)
+	at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+	at async safeValidateTypes (c:\Users\Pro User\.vscode\extensions\poml-team.poml-0.0.9-nightly.202509062201\dist\extension.js:67347:20)
+	at async safeParseJSON (c:\Users\Pro User\.vscode\extensions\poml-team.poml-0.0.9-nightly.202509062201\dist\extension.js:67392:12)
+	at async Object.transform (c:\Users\Pro User\.vscode\extensions\poml-team.poml-0.0.9-nightly.202509062201\dist\extension.js:67422:28)

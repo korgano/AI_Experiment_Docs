@@ -1,0 +1,63 @@
+[FLM]  Configuring NPU Power Mode to performance (flm default)
+[FLM]  Loading model: C:\Users\Pro User\.cache\huggingface\hub\models\Llama-3.2-1B-NPU2
+[FLM]  Starting server on port 11434...
+[FLM]  WebServer started on port 11434 with 10 I/O threads
+[FLM]  Enter 'exit' to stop the server:
+[🔗 ]  TCP connection established - Remote: 127.0.0.1:50469
+[TCP]  Read 160 bytes from socket
+================================================
+[⬇️ ]  Incoming Request: GET
+[LOG]  Time stamp: 10:17:50 10:02:2025
+[LOG]  Target: /api/tags
+[LOG]  Version: 11
+[LOG]  Keep-Alive: 1
+[LOG]  Body:
+null
+[⬆️ ]  Outgoing Response:
+[LOG]  Time stamp: 10:17:50 10:02:2025
+================================================
+[TCP]  Keeping TCP connection alive for next request
+[🔒 ]  TCP connection closed - Remote: 127.0.0.1:50469
+[🔗 ]  TCP connection established - Remote: 127.0.0.1:50471
+[TCP]  Read 1068736 bytes from socket
+================================================
+[⬇️ ]  Incoming Request: POST
+[LOG]  Time stamp: 10:17:55 10:02:2025
+[LOG]  Target: /v1/chat/completions
+[LOG]  Version: 11
+[LOG]  Keep-Alive: 1
+[LOG]  Body:
+{
+    "messages": [
+        {
+            "content": [
+                {
+                    "text": "# Task",
+                    "type": "text"
+                },
+                {
+                    "image_url": {
+                        "url": "data:image...VORK5CYII="
+                    },
+                    "type": "image_url"
+                },
+                {
+                    "text": " Analyze t... findings.",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "model": "gemma3:4b",
+    "stream": true,
+    "temperature": 0.8,
+    "top_p": 0.9
+}
+[🟢 ]  NPU Locked!
+[FLM]  Loading model: C:\Users\Pro User\.cache\huggingface\hub\models\Gemma3-4B-NPU2
+[FLM]  Start generating...
+[FLM]  Total images: 1
+ChatCompletionChunk: {"id":"chatcmpl-51cac0ddbe102d0345cffbab","object":"chat.completion.chunk","created":1759414770,"model":"gemma3:4b","system_fingerprint":"fp_071dd16bb249ea08","usage":{"prompt_tokens":329,"completion_tokens":647,"total_tokens":976,"load_duration":94.347952128,"prefill_duration_ttft":5.65040384,"decoding_duration":48.341057536,"prefill_speed_tps":58.225926733052766,"decoding_speed_tps":13.38406797406477}}
+[🔒 ]  Closing TCP connection (streaming, non-keep-alive)
+[🔵 ]  NPU Lock Released!
